@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de compra con IVA</title>
+</head>
+<body>
+  <h1>Calculadora de compra</h1>
+
+  <label>
+    Monto de la compra:
+    <input type="number" id="montoCompra">
+  </label>
+  <br>
+
+  <label>
+    Descuento (%):
+    <input type="number" id="descuento">
+  </label>
+  <br>
+
+  <label>
+    <input type="checkbox" id="checkboxIVA">
+    Aplicar IVA (16%)
+  </label>
+  <br>
+
+  <button onclick="calcularTotal()">Calcular</button>
+
+  <h2>Resultado:</h2>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularTotal() {
+      var montoCompra = parseFloat(document.getElementById('montoCompra').value);
+      var descuento = parseFloat(document.getElementById('descuento').value);
+      var checkboxIVA = document.getElementById('checkboxIVA');
+
+      // Restar descuento
+      var total = montoCompra - (montoCompra * (descuento / 100));
+
+      // Añadir IVA si el checkbox está marcado
+      if (checkboxIVA.checked) {
+        total = total * 1.16;
+      }
+
+      // Mostrar el resultado
+      document.getElementById('resultado').textContent = 'Total: $' + total.toFixed(2);
+    }
+  </script>
+</body>
+</html>

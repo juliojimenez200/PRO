@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuelto</title>
+    <link rel="stylesheet" href="../../css/estilovuelto.css">
+    
+</head>
+<body>
+    <header>
+        <h1>VUELTO POR DAR </h1>
+    </header>
+    <main>
+        <section class="container">
+          <form action="">
+             <label for="">
+                <input type="number" id="cantidad" value="" placeholder="Ingrese la cantidad">
+             </label>
+             <label for="">
+                <input type="number" id="precio" value="" placeholder="Ingrese el precio">
+             <label for="">
+                <input type="number" id="pago" value="" placeholder="Ingrese su pago">
+             </label>
+             <div class="checkbox-container">
+                <input type="checkbox" id="checkbox">
+                <span class="checkmark"></span>
+                <label class="checkbox-label" for="">Calcular IVA</label>
+              </div>
+             
+             <div class="botones">
+                <button type="button" class="boton" onClick="numero.vuelto()">Aceptar</button>
+                <button type="button" class="boton" onClick="limpiar()">Limpiar</button>
+                <button type="button" class="boton" onClick="numero.regresar()">Regresar</button>
+
+             </div>
+             <div id="camb">
+            
+             </div>
+          </form>
+ 
+        </section>
+      
+    </main>
+    <footer>
+        <h6>Todos los derechos reservados - Julio.J</h6>
+    </footer>
+    <script>
+        function  limpiar(){
+            document.getElementById("precio").value=" "
+            document.getElementById("cantidad").value=" "
+            document.getElementById("pago").value=" "
+            document.getElementById("camb").textContent=" "
+        }
+    </script>
+    <script src="../../js/main.js" ></script>
+</body>
+</html>
